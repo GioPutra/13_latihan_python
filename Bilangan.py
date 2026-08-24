@@ -1,42 +1,50 @@
-def cek_bilangan(angka):
-    """Fungsi untuk menentukan apakah bilangan ganjil atau genap."""
-    if angka % 2 == 0:
-        return f"{angka} adalah bilangan genap 🟢"
-    else:
-        return f"{angka} adalah bilangan ganjil 🔴"
+import os
+print(os.system("cls"))
 
-def main():
-    """Fungsi utama untuk menjalankan perulangan dan menerima input pengguna."""
-    print("<============ Program untuk menentukan GANJIL/GENAP ============>\n")
+print("<============ Program untuk menentukan GANJIL/GENAP ============>")
 
+def ganjil_genap():
     while True:
-        user_input = input("Masukkan bilangan yang akan diperiksa (atau ketik 'keluar'): ")
-
-        # Mengecek jika pengguna ingin keluar langsung via teks
-        if user_input.lower() == "keluar":
+        angka = int(input("Masukkan bilangan yang akan diperiksa: "))
+        
+        if angka % 2 == 0:
+            print(angka, "adalah bilangan genap 🟢")
+        else:
+            print(angka, "adalah bilangan ganjil 🔴")
+            
+        if input("\nApakah ingin memeriksa bilangan lain? (Y/N):").upper() == "N":
             print("Terima kasih telah menggunakan program ini.")
             print("================================================================")
             break
-
-        # Validasi apakah input berupa angka positif/nol
-        if user_input.isdigit():
-            angka = int(user_input)
-            hasil = cek_bilangan(angka)
-            print(hasil)
-            
-            # Konfirmasi untuk melanjutkan perulangan
-            lanjut = input("\nApakah ingin memeriksa bilangan lain? (Y/N): ").upper()
-            if lanjut == "N":
-                print("Terima kasih telah menggunakan program ini.")
-                print("================================================================")
-                break
-            print()
         else:
-            print("Input tidak valid. Masukkan angka yang benar atau ketik 'keluar'.\n")
-
-if __name__ == "__main__":
-    main()
+            continue
 
 
+def cek_prima():
+    while True:
+        angka = int(input("Masukkan bilangan yang akan diperiksa: "))
 
-    
+        if angka < 2:
+            print(angka, "bukan bilangan prima")
+        else:
+            prima = True
+
+            for pembagi in range(2, int(angka ** 0.5) + 1):
+                if angka % pembagi == 0:
+                    prima = False
+                    break
+
+            if prima:
+                print(angka, "adalah bilangan prima")
+            else:
+                print(angka, "bukan bilangan prima")
+
+        if input("\nApakah ingin memeriksa bilangan lain? (Y/N): ").upper() == "N":
+            print("Terima kasih telah menggunakan program ini.")
+            break
+
+
+cek_prima()
+
+
+ganjil_genap()
