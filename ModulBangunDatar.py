@@ -19,10 +19,11 @@ def persegi_panjang(panjang, lebar):
 # Fungsi lingkaran
 def lingkaran(jari_jari):
     import math
-    x = print("Luas Lingkaran:", math.pi * jari_jari ** 2)
-    y = print("keliling Lingkaran:", 2 * math.pi * jari_jari)
-<<<<<<< HEAD
-    return x, y
-=======
-    return x, y
->>>>>>> fc5cdbd35117c25b1092b5a322a85fbd10fb0afb
+    
+    luas = math.pi * jari_jari ** 2
+    keliling = 2 * math.pi * jari_jari
+    
+    print("Luas Lingkaran:", luas)
+    print("Keliling Lingkaran:", keliling)
+    
+    return luas, keliling
