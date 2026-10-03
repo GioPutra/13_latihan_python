@@ -39,8 +39,3 @@ def prima():
         if input("\nApakah ingin memeriksa bilangan lain? (Y/N): ").upper() == "N":
             print("Terima kasih telah menggunakan program ini.")
             print("================================================================\n")
-<<<<<<< HEAD
-            break
-=======
-            break
->>>>>>> fc5cdbd35117c25b1092b5a322a85fbd10fb0afb
