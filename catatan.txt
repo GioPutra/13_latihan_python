@@ -1,0 +1,2 @@
+Ini adalah catatan sederhana.
+Menulis file berhasil!
